@@ -101,7 +101,6 @@ tab[selected]:-moz-window-inactive {
 .tab-close-button {
 	-moz-appearance: none !important;
 	border: 1px solid transparent;
-	box-sizing: content-box; /* Avoid deformation on flexbox */
 	border-radius: 5px;
 	list-style-image: url("../icons/window-close-symbolic.svg") !important;
 	height: 16px;
