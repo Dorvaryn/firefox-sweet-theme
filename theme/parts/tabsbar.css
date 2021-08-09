@@ -82,7 +82,7 @@ tab[selected]:-moz-window-inactive {
 /* Center all inside tab */
 .tab-content {
 	display: flex;
-	justify-content: center;
+	justify-content: left;
 	align-items: center;
 	margin-top: -1px;
 	min-width: 100% !important;
@@ -93,54 +93,6 @@ tab[selected]:-moz-window-inactive {
 .tab-icon-image, .tab-icon-sound, .tab-throbber, .tab-throbber-fallback, .tab-close-button {
 	min-width: 16px;
 }
-
-/* Adjust tab label width */
-.tab-label-container {
-	min-width: 0 !important;
-}
-
-/* Put tab close button and icon sound to the right */
-.tab-icon-sound[soundplaying="true"], .tab-icon-sound[muted="true"],
-.tab-icon-sound[activemedia-blocked="true"] {
-	margin-left: auto !important;
-}
-.tabbrowser-tab:not([soundplaying]):not([muted]):not([activemedia-blocked]) .tab-close-button {
-	margin-left: auto !important;
-}
-.tab-icon-sound {
-	margin-right: 6px;
-}
-
-/* Force tab favicon to the center */
-.tabbrowser-tab:not([class*="identity-color-"]) .tab-throbber, .tabbrowser-tab:not([class*="identity-color-"]) .tab-throbber-fallback {
-	margin-left: auto;
-}
-.tabbrowser-tab:not([busy]):not([class*="identity-color-"]) .tab-icon-image {
-	margin-left: auto;
-}
-
-/* If tab favicon is not present, force tab label to the center */
-.tabbrowser-tab .tab-label-container {
-	margin-left: 0 !important;
-}
-.tabbrowser-tab:not([image]):not([busy]):not([progress]):not([class*="identity-color-"]) .tab-label-container,
-.tabbrowser-tab:not([class*="identity-color-"]) .tab-icon-stack {
-	margin-left: auto !important;
-}
-
-/* If tab close button is not present, don't force favicon to the center */
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]) .tab-throbber,
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]) .tab-throbber-fallback,
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]):not([busy]) .tab-icon-image,
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]):not([image]) .tab-label-container,
-#tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([selected="true"]) .tab-icon-stack {
-	margin-left: 0 !important;
-}
-
-/* Remove tab icons */
-/* tab:not([pinned=true]) .tab-icon-image {
-	display: none;
-} */
 
 /* Close tab button */
 :root {	
@@ -156,6 +108,7 @@ tab[selected]:-moz-window-inactive {
 	opacity: .3;
 	padding: 2px;
 	width: 16px;
+	margin-left: auto;
 }
 
 :root:-moz-window-inactive .tab-close-button:not(#hack) {
@@ -206,7 +159,7 @@ tab[selected]:-moz-window-inactive {
 	bottom
 	var(--sweet-tabbar-tab-active-background)    
 	no-repeat !important; 
-  	background-size: 100% 3px!important;
+  	background-size: 100% 2px!important;
 	border: 0 !important;
 	border-image: none !important;
 }
@@ -230,52 +183,3 @@ tab[selected]:-moz-window-inactive {
 	border-bottom: 3px solid var(--sweet-tabbar-tab-hover-border-bottom-color) !important;
 }
 
-/* Full width tabs */
-.tabbrowser-tab:not([style^="max-width"]):not([pinned]),
-.tabbrowser-tab[style^="max-width: 100px !important;"]:not([pinned]) {
-	max-width: 100% !important;
-}
-
-.tabbrowser-tab:not([style^="max-width"]):not([pinned]):not([fadein]),
-.tabbrowser-tab[style^="max-width: 100px !important;"]:not([pinned]):not([fadein]) {
-	max-width: .1px !important;
-}
-
-/* Remove blank spaces on tabs start and end */
-#TabsToolbar .titlebar-spacer {
-	display: none !important;
-}
-
-/* Remove container bottom line indicator */
-.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-bottom-line,
-.tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
-	display: none;
-}
-
-/* Create new container tab indicator */
-.tabbrowser-tab[class*="identity-color-"] .tab-content::before {
-	content: "";
-	display: block;
-    background-image: var(#userContext-icons:--identity-icon);
-	background: var( --identity-tab-color);
-	-moz-context-properties: fill;
-	fill: var(--identity-icon-color);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
-	min-width: 10px;
-	height: 10px;
-	margin-right: 5px;
-	margin-left: auto !important;
-	border-radius: 100%;
-}
-
-.tabbrowser-tab[class*="identity-color-"][pinned] .tab-content::before,
-.tabbrowser-tab[class*="identity-color-"][image] .tab-content::before, 
-.tabbrowser-tab[class*="identity-color-"][busy] .tab-content::before, 
-.tabbrowser-tab[class*="identity-color-"][progress] .tab-content::before {
-	right: -10px;
-	top: -8px;
-	position: relative;
-	margin-right: -10px;
-}
