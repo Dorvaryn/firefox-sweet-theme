@@ -46,18 +46,6 @@ tab > stack {
 	display: none;
 }
 
-/* Remove tab separators */
-.tabbrowser-tab::after,
-.tabbrowser-tab::before {
-	border-color: transparent !important;
-	border-image: none !important;
-}
-
-/* Space between tabs */
-.tabbrowser-tab:not([pinned=true]) {
-	margin: 0 4px !important;
-}
-
 /* Tab labels */
 tab {
 	color: var(--sweet-tabbar-tab-color) !important;

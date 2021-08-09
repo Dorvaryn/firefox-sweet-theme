@@ -17,7 +17,7 @@
 /*@import "theme/matching-autocomplete-width.css"; /**/
 
 /* Use system theme icons instead of Adwaita icons included by theme */
-@import "theme/system-icons.css"; /**/
+/*@import "theme/system-icons.css"; /**/
 
 /* Make all tab icons look kinda like symbolic icons */
 /*@import "theme/symbolic-tab-icons.css"; /**/
