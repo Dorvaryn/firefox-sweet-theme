@@ -26,7 +26,7 @@
 #sidebar-switcher-target,
 #viewButton,
 .close-icon:not(.tab-close-button),
-#TabsToolbar .toolbarbutton-1,
+#TabsToolbar 
 .menulist-label-box,
 .expander-down, .expander-up {
 	-moz-appearance: none !important;
