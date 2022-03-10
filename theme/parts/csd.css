@@ -2,13 +2,19 @@
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#main-window {
+/*#main-window {
 	-moz-appearance: -moz-window-titlebar !important;
-}
+}*/
 
 /* Headerbar top border corners rounded */
 :root[tabsintitlebar]:not([inFullscreen]):not([sizemode="maximized"]) #nav-bar {
 	border-radius: 7px 7px 0 0 !important;
+}
+
+:root[tabsintitlebar][sizemode="maximized"] #titlebar .titlebar-buttonbox-container,
+:root[tabsintitlebar][sizemode="maximized"] #titlebar-buttonbox-container,
+:root[tabsintitlebar][sizemode="maximized"] #nav-bar {
+	margin-top: 8px;
 }
 
 /* Window buttons: at least 1 button */
@@ -33,8 +39,8 @@
 }
 
 /* Fullscreen headerbar padding for 1 button */
-:root[tabsintitlebar][inFullscreen] #nav-bar {
-	padding-right: 50px !important;
+:root[tabsintitlebar] #nav-bar {
+	padding-right: 90px !important;
 }
 
 /* Window buttons box */
@@ -43,10 +49,11 @@
 :root[tabsintitlebar][inFullscreen] #window-controls {
 	-moz-appearance: none !important;
 	padding: 0 3px 0 4px;
-	position: absolute !important;	
+	position: absolute !important;
 	right: 0;
 	top: 0;
 	display: flex !important;
+	margin-right: 3px !important;
 }
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox {
 	-moz-appearance: none !important;
@@ -92,12 +99,12 @@
 	display: none;
 }
 
-/* Left window buttons */	
-@media (-moz-gtk-csd-reversed-placement) {	
+/* Left window buttons */
+@media (-moz-gtk-csd-reversed-placement) {
 	:root[tabsintitlebar]:not([inFullscreen]) #nav-bar {
 		padding-right: 3px !important;
 	}
-	
+
 	/* Window buttons box */
 	:root[tabsintitlebar] #titlebar .titlebar-buttonbox-container {
 		padding: 0 3px 0 4px;
@@ -124,7 +131,7 @@
 		:root[tabsintitlebar]:not([inFullscreen]) #nav-bar {
 			padding-left: 90px !important;
 		}
-	} 
+	}
 }
 
 /* Remove tabsbar titlebar blank spaces */
@@ -149,19 +156,19 @@
 }
 
 /* Allow window drag with headerbar buttons */
-:root[tabsintitlebar] #nav-bar *,
+/*:root[tabsintitlebar] #nav-bar *,
 :root[tabsintitlebar] #titlebar .titlebar-button,
 :root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton {
 	-moz-window-dragging: drag;
 }
 
-:root[tabsintitlebar] #nav-bar .urlbar-input-box, 
+:root[tabsintitlebar] #nav-bar .urlbar-input-box,
 :root[tabsintitlebar] #nav-bar .urlbar-input-box *,
 #back-button,
 #forward-button{
 	-moz-window-dragging: no-drag !important;
 }
-
+*/
 /* FF 60 fixes */
 :root[tabsintitlebar] #titlebar[style="margin-bottom: -1px;"] {
     margin-bottom: -38px !important;
@@ -177,6 +184,6 @@
 	padding: 0 !important;
 	margin: 0 !important;
 }
-:root[tabsintitlebar] #titlebar-content .titlebar-button {	
+:root[tabsintitlebar] #titlebar-content .titlebar-button {
 	padding: 0 7px !important;
 }
