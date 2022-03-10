@@ -7,7 +7,7 @@
 }
 
 #TabsToolbar:not([inFullscreen]) > .toolbar-items {
-	margin-bottom: 2px !important;
+	margin-bottom: -1px !important;
 }
 
 /* Fix tabs bar icon sizes */
@@ -17,8 +17,12 @@
 /* Tabs bar height */
 #tabbrowser-tabs,
 #tabbrowser-tabs arrowscrollbox {
-	height: 36px !important;
-	min-height: 36px !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+tab > stack {
+	height: 30px !important;
+	min-height: 30px !important;
 }
 
 /* Remove hover effects on tab bar buttons */
